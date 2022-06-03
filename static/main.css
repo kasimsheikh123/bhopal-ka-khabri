@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Glass+Antiqua&family=Julius+Sans+One&family=Pacifico&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0%;
+    
+}
+body{
+    background-color: rgb(0, 0, 0);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#home,#result ,#aboutus,#form,#contact,.inner-div{
+    width:100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+#home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutus,#contact{
+    margin: 0px;
+    height:fit-content;
+}
+
+
+/* Home section  */
+
+#home .sec-divs h1{
+    top:300px;
+    color:rgb(253, 253, 252);
+    backdrop-filter: blur(5px);
+    margin:auto;
+    padding:20px;
+    backface-visibility: blur(100px);
+    font-weight: 200;
+    height:40%;
+    width:80%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Glass Antiqua', cursive,sans-serif;
+    font-size: 65.5px;
+    letter-spacing:1.2rem;
+    text-shadow: 5px 3px 12px rgb(36, 200, 159);
+    transition: font-size 2s ease-in-out;
+}
+#home .sec-divs h1:hover{
+    font-size: 60px;
+}
+
+ #home{
+    margin: 0px;
+    /* background: url(../static/bgvid.mp4); */
+    opacity: .8;
+    height: 100vh;
+}
+#home .sec-divs{
+    position: absolute;
+} 
+
+/* video  */
+
+video{
+    width: 100vw;;
+    
+}
+
+#myVideo {
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    width: 100%;
+    padding: 20px;
+  }
+
+/* navbar  */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.slide_left{
+    animation: slide_left 1.5s linear forwards;
+}
+
+
+@keyframes slide_left {
+    0%{
+        opacity: 0;
+        transform: translate(200px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+    }
+    
+}
+
+/* About-us section  */
+
+#form{
+    background-color: rgb(245, 192, 161);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Footer section  */
+
+#contact{
+    padding:40px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(0, 0, 0);
+}
+#contact> a{
+    padding:10px;
+    font-size: 20px;
+    margin:20px 10px;
+    color: black;
+}
+#contact>p{
+    margin-top:20px;
+}
+#contact>a:hover{
+    text-shadow: 2px 2px 10px purple ;
+}
+
+/* Form section */
+#form{
+    background-color:rgb(25, 128, 16);
+}
+.form{
+    width:100vw;
+    text-transform: uppercase;
+    padding:20px;
+}
+.form>.text{
+    color:white;
+    backdrop-filter: blur(5px);
+}
+form{
+    width:90%;
+}
+
+/* modal styling  */
+.modal-header{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.modal{
+    width:100vw;
+}
+.modal-body{
+    display: flex;
+    justify-content: left;
+    font-size:1.1rem;
+}
+
+/* input fields  */
+input[type=number],input[type=text],.mb-3 select{
+    width:30%;
+    text-align: center; 
+    transition: all 1s;
+    color:black;
+}
+input{
+    transition: all 2s;
+}
+input:hover{
+    background-color: rgb(71, 68, 68);
+    color:white;
+}
+select:hover{
+    background-color: rgb(71, 68, 68);
+    color:white;
+}
+
+/* Animation  */
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #18fff3 0%,
+    #1805c5 29%,
+    #cecece 67%,
+    #ffffff 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   animation: textclip 2s linear infinite;
+   font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Form styling  */
+.radiobtn{
+    background-color: rgb(255, 255, 255);
+   padding: 10px;
+   color: rgb(71, 68, 68);
+   border: none;
+   border-radius: 10px;
+   overflow: hidden;
+   transition: 1s;
+   margin: 10px;
+   max-width: fit-content;
+   box-shadow: 0px 0px 10px darkblue;
+   min-width:150px;
+   text-align: center;
+ }
+ .radiobtn:hover{
+     color:white;
+     background-color: rgb(71, 68, 68);
+ }
+ select{
+     transition: all 2s;
+     font-size:16px;
+ }
+ select:hover{
+     background-color: rgb(71, 68, 68);
+ }
+ input[type="radio"]:checked+.radiobtn{
+     background-color:rgb(71, 68, 68);
+   padding: 10px;
+   color: rgb(255, 255, 255);
+   border: none;
+   border-radius: 10px;
+   overflow: hidden;
+   transition: 1s;
+   margin: 10px;
+   max-width: fit-content;
+   box-shadow: 0px 0px 10px rgb(255, 255, 255);
+   min-width:160px;
+   text-align: center;
+ 
+ }
+ #uilocation{
+     font:1.2rem;
+ }
+ input[type="radio"]{
+   display: none;
+ }
+ 
+ .sliders,.dropdown,.area,.radios{
+   backdrop-filter: blur(50px);
+   box-shadow:4px 4px 30px rgb(255, 255, 255);
+   padding:10px;
+   border-radius: 10px;
+   overflow: hidden;
+   margin:20px;  
+   color: white;
+ }
+ .col-sm-6{
+   min-height: 600px;
+ }
+ 
+ .dropdown{
+   display: flex;
+ }
+ .title{
+   font-variant-caps:all-petite-caps;
+   font-size: 2rem;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color:rgb(255, 255, 255);
+ }
+ 
+ .dropdown select,.dropdown select option,.area input{
+   width:100%;
+   border:none;
+   border-radius: 20px;
+   overflow: hidden;
+   text-align: center;
+   font-size: 1.5rem;
+ }
+ 
+ .slider input{
+   width:80%;
+ }
+ .slidenums{
+   font-size: 1.5rem;
+   text-align: center;
+ }
+ 
+ .sub-btn{
+   background-color: white;
+   color:white;
+   text-align: center;
+   width:90%;
+   font-size: 1.2rem;
+   box-shadow: 0px 0px 10px rgb(0, 0, 0);
+   transition: 2s;
+   font-weight: bolder;
+   text-transform: uppercase;
+   letter-spacing: 1rem;
+   animation: pop 4s;
+   margin: 20px;
+   animation-timing-function: ease-in-out;
+   animation-direction: normal;
+   transition: all 3s;
+ }
+ @keyframes pop {
+     0%{
+         letter-spacing: 1rem;
+     }
+     50%{
+         letter-spacing: 1.5rem;
+     }
+     100%{
+         letter-spacing: 1rem;
+     }
+ }
+ .sub-btn:hover{
+    background-color: rgb(65, 61, 61);
+   color:rgb(255, 255, 255);
+   width:90%;
+   font-size: 1.2rem;
+   box-shadow: 0px 0px 10px rgb(0, 0, 0);
+   border: 3px solid rgb(180, 180, 212);
+   transition: 3s;
+   text-align: center;
+   letter-spacing: 2rem;
+ }
+
+ .link{
+     color:rgb(0, 0, 0);
+     text-decoration:none;
+ }
+ .link:hover{
+     color:white;
+     text-decoration: none;
+ }
+
+
+@media screen and (max-width:775px) {
+
+    /* home section  */
+    #home{
+        height:80vh;
+    }
+    #home .sec-divs h1{
+        color:rgb(253, 253, 252);
+        margin: auto auto;
+        padding:20px;
+        top:100px;
+        width:80%;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Glass Antiqua',cursive,sans-serif;
+        letter-spacing:1.1rem;
+        text-shadow: 5px 3px 12px rgb(36, 200, 159);
+        transition: font-size 2s ease-in-out;
+    }
+
+    /* Footer section  */
+    #form{
+        background-color:rgb(0, 0, 0);
+    }
+    #contact{
+        padding:20px;
+    }
+    #contact> a{
+        padding:10px;
+        margin:10px 10px;
+        color: black;
+    }
+}
+
+@media screen and (max-width:550px) {
+
+    /* home section  */
+    #home{
+        height:100vh;
+    }
+    #home .sec-divs h1{
+        color:rgb(253, 253, 252);
+        margin: auto auto;
+        padding:20px;
+        width:80%;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Glass Antiqua',cursive,sans-serif;
+        font-size: 60px;
+        letter-spacing:1.1rem;
+        text-shadow: 5px 3px 12px rgb(36, 200, 159);
+        transition: font-size 2s ease-in-out;
+    }
+    #home .sec-divs h1:hover{
+        font-size: 55px;
+    }
+    #form{
+        background-color:rgb(49, 11, 2);
+    }
+    /* Footer section  */
+
+    #contact{
+        padding:20px;
+    }
+    #contact> a{
+        padding:10px;
+        margin:10px 10px;
+        color: black;
+    }
+}
+  
+ 

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   <link href="{{url_for('static', filename = 'main.css')}}" rel="stylesheet" >
+   <script src="https://kit.fontawesome.com/0e5fe7cb89.js" crossorigin="anonymous"></script>
+   <title>house price prediction project</title>
+   <script src="{{url_for('static',filename = 'main.js')}}" type="text/javascript"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" href="#home">BHOPAL KA KHABRI </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#aboutus" data-bs-toggle="modal" data-bs-target="#exampleModal">Know more</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" aria-current="page" href="#form">Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#contact">Contact</a>
+          </li>
+          </li>
+        </ul>
+        <img src="../static/house.gif" alt="house" width="50px" height="50px" class="ml-auto">
+      </div>
+    </div>
+  </nav>
+    
+    <section id="home">
+        <div class="sec-divs flex justify-content-center">
+          <video autoplay muted loop id="myVideo">
+            <source src="../static/bgvid.mp4" type="video/mp4">
+          </video>
+            <h1 class="text slide_left animate-charcter">Bhopal Ka Khabri</h1>
+        </div>
+    </section>
+
+   
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="modal-title text text-center" id="exampleModalLabel">Know more</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body sec-divs">
+        <p class="text container">This is a Machine learning model implementation. We have created a UI for a machine learning model that can predict the price of a house in a specific location of bhopal. We have trained this machine learning model using the data we scraped from Magicbricks.com and 99 acres.com . The data that was collected is used to train as well as to test the model. 
+          The accuracy of this machine learning model is 97%  and the mean squared error is 1.3 which makes our Machine learning model pretty accurate.<br>
+          This project will help the people who are new to Bhopal city and want to buy a house. They can use this portal and find out the approx amount that they have to pay. If they don’t have any other idea about the price they would end up paying extra to the Brokers and would deal with a great financial loss. Our project aims to reduce the risk of such frauds. We can also improve this model by adding a login system so we can inform users about future house prices if they want to buy after some time. We will also add a chatbot in this so that user can find out more about bhopal.
+        </p>          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <section id="form">
+      <div class="container-fluid sec-div form text-center">
+        <h1 class="text">Welcome to The Prediction Portal</h1>
+        
+          <form action="">
+            <div class="row container-fluid  form">
+              <div class="col-sm-6 justify-content-center">
+                    <div class="dropdown">
+                      <div class="title m-2">location</div>
+                        <select id="uilocation" class="location">  
+                          <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+                          <option > ayodhya bypass </option>  
+                          <option >mp nagar </option>  
+                          <option >moti mazjid</option>  
+                        </select>  
+                   </div>
+
+                <div class="sliders my-5">
+                  <div class="slider">
+                    <div class="title">number of bathrooms</div>
+                     <input type="range" min="0" max="10" value="0"
+                         class="myslider" id="bath" oninput="document.querySelector('span.bath').innerText=this.value">
+                      <span class="slidenums bath">0</span>
+                  </div>
+
+                   <div class="slider">
+                    <div class="title">number of bedrooms</div>
+                     <input type="range" min="0" max="10" value="0"
+                         class="myslider" id="bedroom" oninput="document.querySelector('span.bed').innerText=this.value">
+                      <span class="slidenums bed">0</span>
+                  </div>
+        
+                 
+                </div>
+                 <div class="area my-5">
+                   <div class="title">
+                     <label for="area">area of house in square feet</label>
+                   </div>
+                   <input type="number" name="" id="area">
+                 </div>
+                 
+               
+             </div>
+             <div class="col-sm-6 justify-content-center"> 
+               <div class="radios">
+                 <div class="radioset">
+                   <div class="title">transaction details</div>
+                    <input type="radio" name="trans" id="resale" value="resale">
+                    <label for="resale" class="radiobtn">Resale</label>
+                    <input type="radio" name="trans" id="new" value="new property">
+                    <label for="new" class="radiobtn">New Property</label>
+                    <input type="radio" name="trans" id="free" value="freehold">
+                    <label for="free" class="radiobtn">Freehold</label>  
+                 </div>
+                 <div class="radioset">
+                   <div class="title">availablity</div>
+                    <input type="radio" name="availablity" id="ready" value="ready to move">
+                    <label for="ready" class="radiobtn">Ready to Move</label>
+            
+                    <input type="radio" name="availablity" id="prebook" value="prebook">
+                    <label for="prebook" class="radiobtn">prebook</label>
+                 </div>
+        
+                 <div class="radioset">
+                   <div class="title">furnishing details</div>
+                    <input type="radio" name="FD" id="furnished" value="furnished">
+                     <label for="furnished" class="radiobtn">Furnished</label> 
+        
+        
+                     <input type="radio" name="FD" id="unfur" value="unfurnished">
+                     <label for="unfur" class="radiobtn">Unfurnished</label>
+        
+                    <input type="radio" name="FD" id="semifurn" value="semi-furnished">
+                    <label for="semifurn" class="radiobtn">Semi-Furnished</label>
+                 </div>
+               </div>
+               
+                 <div class="row justify-content-center my-4">
+                   <button type="button" onclick="clickhere()" class="sub-btn btn"> <a href="#estimated" class="link link-dark text-decoration-none"> search</a> </button>
+                 </div>
+        
+             </div>
+           </div>
+            </form>
+
+
+            <div class="container-fluid sec-div form text-center">
+              <h1 class="text" id="estimated">Predicted Price will Display Here</h1>
+          </div>      
+        </div>
+    </section>
+   
+     <footer id="contact" class="container-fluid bg-light">
+      <img src="../static/house.gif" alt="house" width="200px" height="200px" class="img-fluid">
+
+      <img src="../static/plant.gif" alt="plant" height="200px" width="200px" class="img-fluid">
+     
+          <a href="https://twitter.com/KsmSheikh" class="link-dark"> <i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100073651136191"  class="link-dark"> <i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/pillow.the.poet/"  class="link-dark"><i class="fab fa-instagram"></i></a>
+          <a href="mailto: sheikhkasim3699@gmail.com"  class="link-dark"><i class="fas fa-envelope"></i></a>
+      <img src="../static/plant.gif" alt="plant" height="200px" width="200px" class="img-fluid">
+      <img src="../static/house.gif" alt="house" width="200px" height="200px" class="img-fluid">
+      <p class="my=0">© Copyright 2022 BHOPAL KA KHABRI</p>
+
+
+       
+      
+      
+     </footer>
+   
+</body>
+</html>
