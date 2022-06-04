@@ -9,19 +9,19 @@ data_columns = None
 model = None
 
 
+def load_saved_artifacts():
+    print("LOADING saved artifacts.........>>>>>")
+    global data_columns
+    global locations
 
-print("LOADING saved artifacts.........>>>>>")
-global data_columns
-global locations
+    with open("static/bhopal_colums.json", "r") as f:
+        data_columns = json.load(f)["data_columns"]
+        locations = data_columns[11:]
 
-with open("static/bhopal_colums.json", "r") as f:
-    data_columns = json.load(f)["data_columns"]
-    locations = data_columns[11:]
-
-global model
-with open("static/fixedbpl.pickle", "rb") as f:
-    model = pickle.load(f)
-print("Loading Artifacts Donee....>>>")
+    global model
+    with open("static/fixedbpl.pickle", "rb") as f:
+        model = pickle.load(f)
+    print("Loading Artifacts Donee....>>>")
 
 
 def get_location():
@@ -68,6 +68,7 @@ def index():
 
 @app.route('/get_location_name', methods=['GET'])
 def get_location_name():
+    load_saved_artifacts()
     response = jsonify({
         'locations': get_location()
     })
