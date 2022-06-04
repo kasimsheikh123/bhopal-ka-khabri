@@ -12,7 +12,7 @@ function clickhere(){
     var estimated = document.getElementById('estimated');
     console.log("Estimate Price Button Clicked");
     
-    var url = 'http://127.0.0.1:5000/predict_home_price';
+    var url = 'https://bhopal-ka-khabri.herokuapp.com/predict_home_price';
     $.post(url,{
         avail: availability,
         furnish: furnishing,
@@ -31,7 +31,7 @@ function clickhere(){
 }
 function onPageLoad(){
     console.log("document loaded");
-    var url = "http://127.0.0.1:5000/get_location_name";
+    var url = "https://bhopal-ka-khabri.herokuapp.com/get_location_name";
     $.get(url,function(data,status){
         console.log("got a response for get_location_names request");
         if(data){
