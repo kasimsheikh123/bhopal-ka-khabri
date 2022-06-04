@@ -65,10 +65,6 @@ app = Flask(__name__, static_url_path="/static")
 def index():
     return render_template("index.html")
 
-# extra try code
-@app.route("/load_saved_artifacts" , methods=['POST', 'GET'])
-def load_saved_artifacts():
-    return load_saved_artifacts()
 
 @app.route('/get_location_name', methods=['GET'])
 def get_location_name():
