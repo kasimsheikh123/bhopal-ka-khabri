@@ -35,12 +35,19 @@ function onPageLoad(){
     $.get(url,function(data,status){
         console.log("got a response for get_location_names request");
         if(data){
+            console.log("locations ready1");
             var locations = data.locations;
+            console.log("locations ready2");
             var uilocation = document.getElementById('uilocation');
+            console.log("locations ready3");
             $('#uilocation').empty();
+            console.log("locations ready4");
             for(var i in locations){
+                console.log("locations ready5");
                 var opt = new Option(locations[i]);
+                console.log("locations ready6");
                 $('#uilocation').append(opt)
+                console.log("locations ready7");
             }
         }
     });
