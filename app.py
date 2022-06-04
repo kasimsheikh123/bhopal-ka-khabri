@@ -9,19 +9,19 @@ data_columns = None
 model = None
 
 
-def load_saved_arfifacts():
-    print("LOADING saved artifacts.........>>>>>")
-    global data_columns
-    global locations
 
-    with open("static/bhopal_colums.json", "r") as f:
-        data_columns = json.load(f)["data_columns"]
-        locations = data_columns[11:]
+print("LOADING saved artifacts.........>>>>>")
+global data_columns
+global locations
 
-    global model
-    with open("static/fixedbpl.pickle", "rb") as f:
-        model = pickle.load(f)
-    print("Loading Artifacts Donee....>>>")
+with open("static/bhopal_colums.json", "r") as f:
+    data_columns = json.load(f)["data_columns"]
+    locations = data_columns[11:]
+
+global model
+with open("static/fixedbpl.pickle", "rb") as f:
+    model = pickle.load(f)
+print("Loading Artifacts Donee....>>>")
 
 
 def get_location():
