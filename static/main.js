@@ -42,6 +42,7 @@ function onPageLoad(){
             console.log("locations ready3");
             $('#uilocation').empty();
             console.log("locations ready4");
+            console.log(locations);
             for(var i in locations){
                 console.log("locations ready5");
                 var opt = new Option(locations[i]);
